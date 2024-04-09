@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@radix-ui/themes';
-import { Text } from '@radix-ui/themes';
+import { Link } from 'react-router-dom';
 
 interface User {
   firstName: string;
@@ -81,6 +81,8 @@ const CreateUser: React.FC = () => {
         <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} />
       </label>
       <Button>Create User</Button>
+      <Link to="/login">Login</Link>
+      <Link to="/">Home</Link>
     </form>
   );
 };
