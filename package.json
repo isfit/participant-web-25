@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.5"
   },
   "dependencies": {
-    "@radix-ui/themes": "^3.0.2"
+    "@radix-ui/themes": "^3.0.2",
+    "husky": "^9.0.11"
   }
 }
