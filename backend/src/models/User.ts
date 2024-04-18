@@ -9,7 +9,7 @@ interface IUser {
     password: string;
     country: string;
     address: string;
-    dateBirth: string;
+    dateBirth: Date;
     role: string;
     comparePassword: (password: string) => Promise<boolean>;
 };
@@ -42,7 +42,7 @@ const userSchema = new Schema<IUser>({
         required: true
     },
     dateBirth: {
-        type: String,
+        type: Date,
         required: true
     },
     role: {

@@ -10,6 +10,7 @@ const register = async (req: Request, res: Response, next: NextFunction) => {
     const { firstName, lastName, email, password, country, address, dateBirth } = req.body;
     try {
 
+        const birthDate = Date.parse(dateBirth);
         const user = new User({
             firstName,
             lastName,
@@ -17,7 +18,7 @@ const register = async (req: Request, res: Response, next: NextFunction) => {
             password,
             country,
             address,
-            dateBirth
+            dateBirth: birthDate
         });
         await user.save();
         res.status(201).json({ message: 'User created' });
