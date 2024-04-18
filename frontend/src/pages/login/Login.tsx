@@ -36,7 +36,8 @@ const Login: React.FC = () => {
         <input type="submit" value="Submit" />
       </form>
       <Link to="/createUser">Create User</Link>
-      <Link to="/">Home</Link>
+      <br />
+      <Link to="/home">Home</Link>
     </div>
   );
 };
