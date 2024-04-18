@@ -31,10 +31,8 @@ const AboutPage: React.FC = () => {
         the selection itself. The election happens through the independent committee for the Students 
         Peace Prize, while the award itself, takes place during ISFiT’s own award ceremony.
       </Text>
-      <Box>
-        <Link to="/Home">Home</Link>
-      </Box>
     </Box>
+    <Link to="/home">Home</Link>
     </div>
   );
 };

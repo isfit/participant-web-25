@@ -24,6 +24,12 @@ const HomePage: React.FC = () => {
       <Box>
         <Link to="/aboutPage">About Isfit</Link>
       </Box>
+      <Box>
+        <Link to="/homePage">Home Page</Link>
+      </Box>
+      <Box>
+        <Link to="/applicationForm">Application Form</Link>
+      </Box>
     </Box>
     </div>
   );
