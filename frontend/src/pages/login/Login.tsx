@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@radix-ui/themes';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -25,6 +26,7 @@ const Login: React.FC = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>
+        <br />
         <label>
           Password:
           <input
@@ -33,10 +35,13 @@ const Login: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <input type="submit" value="Submit" />
+        <br />
+        <Button type="submit">Login</Button>
       </form>
-      <Link to="/createUser">Create User</Link>
-      <Link to="/">Home</Link>
+      <br />
+      <Link to="/createUser" style={{ color: 'white', textDecoration: 'underline' }}>Create User</Link>
+      <br />
+      <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
     </div>
   );
 };

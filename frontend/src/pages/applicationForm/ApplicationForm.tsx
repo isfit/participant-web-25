@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Button} from '@radix-ui/themes';
+import { Link } from 'react-router-dom';
 
 interface FormValues {
   coverLetter: string;
@@ -43,6 +44,7 @@ const ApplicationForm: React.FC = () => {
         </div>
         <Button type="submit">Submit</Button>
       </form>
+        <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
     </div>
   );
 };

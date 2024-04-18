@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading, Text, Box } from '@radix-ui/themes';
+import { Heading, Text, Box, Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import './AboutPage.css';
 
@@ -37,10 +37,8 @@ const AboutPage: React.FC = () => {
         the selection itself. The election happens through the independent committee for the Students 
         Peace Prize, while the award itself, takes place during ISFiT’s own award ceremony.
       </Text>
-      <Box>
-        <Link to="/Home">Home</Link>
-      </Box>
     </Box>
+      <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
     </div>
   );
 };
