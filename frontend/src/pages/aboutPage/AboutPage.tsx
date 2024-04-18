@@ -20,6 +20,12 @@ const AboutPage: React.FC = () => {
         in Trondheim every other year in unison. The next festival will happen in 2025. Each festival 
         explores a different theme, and this festival's theme is POWER!
       </Text>
+      <Text as="p">
+        In a world driven by various forms of power, ISFIT25 encourages a reflective journey into 
+        understanding and redefining the concept. Power, often associated with authority and control, 
+        extends beyond conventional boundaries. At ISFIT, we believe in harnessing the strength of 
+        influence to bring about positive change. 
+      </Text>
       <Heading as="h2" size={"1"}>
         The Student Peace Prize
       </Heading>
