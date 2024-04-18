@@ -5,7 +5,7 @@ import CreateUser from './pages/createUser/CreateUser';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import AboutPage from './pages/aboutPage/AboutPage';
-
+import HomePage from './pages/homePage/HomePage';
 //import NotFoundPage from './pages/NotFoundPage';
 
 const App: React.FC = () => {
@@ -17,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/aboutPage" element={<AboutPage />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/homePage" element={<HomePage />} />
         {/* Add more routes here if needed */}
         {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>
