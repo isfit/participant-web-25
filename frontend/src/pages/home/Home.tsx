@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Box, Heading, Text } from '@radix-ui/themes';
+import { Box, Heading, Text, Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -16,10 +16,15 @@ const HomePage: React.FC = () => {
         Created by IT GÆNG 25.
       </Text>
       <Box>
-        <Link to="/login">Login</Link>
+        <Button>
+          <Link to="/login" style={{ color: 'white' }}>Login</Link>
+        </Button>
       </Box>
+      <br />
       <Box>
-        <Link to="/createUser">Create User</Link>
+        <Button>
+          <Link to="/createUser" style={{ color: 'white' }}>Create User</Link>
+        </Button>
       </Box>
       <Box>
         <Link to="/aboutPage">About Isfit</Link>

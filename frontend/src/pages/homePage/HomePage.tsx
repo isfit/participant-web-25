@@ -9,7 +9,7 @@ function HomePage() {
       <Button>FILL OUT APPLICATION</Button>
       <Button>VIEW MY APPLICATION</Button>
       <Button>ABOUT ISFiT</Button>
-      <Link to="/home">Home</Link>
+      <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
     </div>
   );
 }
