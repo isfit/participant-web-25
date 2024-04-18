@@ -81,8 +81,9 @@ const CreateUser: React.FC = () => {
         <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} />
       </label>
       <Button>Create User</Button>
-      <Link to="/login">Login</Link>
-      <Link to="/">Home</Link>
+      <br />
+      <Link to="/login" style={{ color: 'white', textDecoration: 'underline' }}>Login</Link>
+      <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
     </form>
   );
 };

@@ -44,7 +44,7 @@ const ApplicationForm: React.FC = () => {
         </div>
         <Button type="submit">Submit</Button>
       </form>
-      <Link to="/home">Home</Link>
+        <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
     </div>
   );
 };

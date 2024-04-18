@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading, Text, Box } from '@radix-ui/themes';
+import { Heading, Text, Box, Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import './AboutPage.css';
 
@@ -32,7 +32,7 @@ const AboutPage: React.FC = () => {
         Peace Prize, while the award itself, takes place during ISFiT’s own award ceremony.
       </Text>
     </Box>
-    <Link to="/home">Home</Link>
+      <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
     </div>
   );
 };
