@@ -21,6 +21,9 @@ const HomePage: React.FC = () => {
       <Box>
         <Link to="/createUser">Create User</Link>
       </Box>
+      <Box>
+        <Link to="/aboutPage">About Isfit</Link>
+      </Box>
     </Box>
     </div>
   );
