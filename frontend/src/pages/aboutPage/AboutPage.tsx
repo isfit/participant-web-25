@@ -8,7 +8,7 @@ import Header from '../../components/Header/Header.tsx';
 
 const AboutPage: React.FC = () => {
   return (
-    <div>
+    <div style={{margin: '30px 30px'}}>
       <Header linkTo='/homepage'/>
       <Box>
         <Heading as="h1" size={"1"}>

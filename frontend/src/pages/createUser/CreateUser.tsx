@@ -39,54 +39,56 @@ const CreateUser: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
-      <Header linkTo='/home'/>
-      <h1>Create User</h1>
-      <label>
-        First Name:
-        <br />
-        <input type="text" name="firstName" value={user.firstName} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
+    <div style={{ margin: '30px 30px' }}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+        <Header linkTo='/home'/>
+        <h1>Create User</h1>
+        <label>
+          First Name:
+          <br />
+          <input type="text" name="firstName" value={user.firstName} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
+          </label>
+        <label>
+          Last Name:
+          <br />
+          <input type="text" name="lastName" value={user.lastName} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
         </label>
-      <label>
-        Last Name:
+        <label>
+          Email:
+          <br />
+          <input type="email" name="email" value={user.email} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
+        </label>
+        <label>
+          Phone Number:
+          <br />
+          <input type="tel" name="phone" value={user.phone} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
+        </label>
+        <label>
+          Country of Residence:
+          <br />
+          <input type="text" name="country" value={user.country} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
+        </label>
+        <label>
+          Date of Birth:
+          <br />
+          <input type="date" name="dob" value={user.dob} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
+        </label>
+        <label>
+          Password:
+          <br />
+          <input type="password" name="password" value={user.password} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
+        </label>
+        <label>
+          Confirm Password:
+          <br />
+          <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
+        </label>
+        <Button>Create User</Button>
         <br />
-        <input type="text" name="lastName" value={user.lastName} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
-      </label>
-      <label>
-        Email:
-        <br />
-        <input type="email" name="email" value={user.email} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
-      </label>
-      <label>
-        Phone Number:
-        <br />
-        <input type="tel" name="phone" value={user.phone} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
-      </label>
-      <label>
-        Country of Residence:
-        <br />
-        <input type="text" name="country" value={user.country} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
-      </label>
-      <label>
-        Date of Birth:
-        <br />
-        <input type="date" name="dob" value={user.dob} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
-      </label>
-      <label>
-        Password:
-        <br />
-        <input type="password" name="password" value={user.password} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
-      </label>
-      <label>
-        Confirm Password:
-        <br />
-        <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '20px' }}/>
-      </label>
-      <Button>Create User</Button>
-      <br />
-      <Link to="/login" style={{ color: 'white', textDecoration: 'underline' }}>Login</Link>
-      <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
-    </form>
+        <Link to="/login" style={{ color: 'white', textDecoration: 'underline' }}>Login</Link>
+        <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
+      </form>
+    </div>
   );
 };
 
