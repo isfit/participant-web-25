@@ -3,11 +3,13 @@ import React from 'react';
 import { Box, Heading, Text, Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import Header from '../../components/Header/Header';
 
 
 const HomePage: React.FC = () => {
   return (
     <div>
+      <Header linkTo='/home'/>
     <Box>
       <Heading as="h1" size={"1"}>
         Welcome to Participant Web!
