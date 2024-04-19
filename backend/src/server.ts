@@ -2,6 +2,8 @@ import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import user from './routes/user';
+import auth from './routes/auth';
 
 dotenv.config();
 
@@ -22,6 +24,9 @@ const uri: string =
         console.log('Error connecting to the database');
     }
 })();
+
+app.use('/auth', auth);
+app.use('/user', user);
 
 app.get('/health', (_req: Request, res: Response) => {
     res.status(200).send('Server is running');
