@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@radix-ui/themes';
+import Header from '../../components/Header/Header';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -16,6 +17,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-page">
+      <Header linkTo='/home'/>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label>

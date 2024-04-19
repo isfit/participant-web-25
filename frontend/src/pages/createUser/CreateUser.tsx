@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, TextField } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 
 interface User {
   firstName: string;
@@ -39,6 +40,7 @@ const CreateUser: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+      <Header linkTo='/home'/>
       <h1>Create User</h1>
       <label>
         First Name:

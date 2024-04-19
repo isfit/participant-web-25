@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import {Button} from '@radix-ui/themes';
+import { Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 
 interface FormValues {
   coverLetter: string;
@@ -27,6 +28,7 @@ const ApplicationForm: React.FC = () => {
 
   return (
     <div>
+      <Header linkTo='/homepage'/>
       <h2>Application Form For Participants</h2>
       <p>Write about yourself and why you want to join Isfit:</p>
       <form onSubmit={handleSubmit}>
