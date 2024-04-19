@@ -16,7 +16,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="login-page">
+    <div className="login-page" style={{margin: '30px 30px'}}>
       <Header linkTo='/home'/>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>

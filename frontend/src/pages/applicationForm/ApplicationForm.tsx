@@ -27,7 +27,7 @@ const ApplicationForm: React.FC = () => {
   };
 
   return (
-    <div>
+    <div style={{margin: '30px 30px'}}>
       <Header linkTo='/homepage'/>
       <h2>Application Form For Participants</h2>
       <p>Write about yourself and why you want to join Isfit:</p>
