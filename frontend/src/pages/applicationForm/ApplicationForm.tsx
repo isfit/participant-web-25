@@ -34,15 +34,15 @@ const ApplicationForm: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <div>
             <label htmlFor="coverLetter">Cover letter:</label><br />
-          <textarea
-            id="coverLetter"
-            name="coverLetter"
-            value={formValues.coverLetter}
-            onChange={handleChange}
-            required
-            rows={20}
-            style={{ width: '100%'}} // Set width and height using inline style
-          />
+            <textarea
+              id="coverLetter"
+              name="coverLetter"
+              value={formValues.coverLetter}
+              onChange={handleChange}
+              required
+              rows={20}
+              style={{ width: '100%', backgroundColor: 'white', borderRadius: '10px', color: 'black', padding: '10px' }} 
+            />
         </div>
         <Button type="submit">Submit</Button>
       </form>
