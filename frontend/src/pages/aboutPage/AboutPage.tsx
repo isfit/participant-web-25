@@ -10,6 +10,8 @@ const AboutPage: React.FC = () => {
   return (
     <div style={{margin: '30px 30px'}}>
       <Header linkTo='/homepage'/>
+      <br />
+      <Button>Apply now!</Button>
       <Box>
         <Heading as="h1" size={"1"}>
           About ISFIT
@@ -40,7 +42,6 @@ const AboutPage: React.FC = () => {
           Peace Prize, while the award itself, takes place during ISFiT’s own award ceremony.
         </Text>
       </Box>
-        <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
     </div>
   );
 };
