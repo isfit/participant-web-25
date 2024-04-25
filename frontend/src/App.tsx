@@ -3,23 +3,21 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import CreateUser from './pages/createUser/CreateUser';
 import Login from './pages/login/Login';
-import Home from './pages/home/Home';
-import AboutPage from './pages/aboutPage/AboutPage';
 import HomePage from './pages/homePage/HomePage';
 import ApplicationForm from './pages/applicationForm/ApplicationForm';
+import ProfilePage from './pages/profilePage/ProfilePage';
 //import NotFoundPage from './pages/NotFoundPage';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<HomePage />} />
         <Route path="/createUser" element={<CreateUser />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/aboutPage" element={<AboutPage />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/homePage" element={<HomePage />} />
         <Route path="/applicationForm" element={<ApplicationForm />} />
+        <Route path="/profilePage" element={<ProfilePage />} />
         {/* Add more routes here if needed */}
         {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>
