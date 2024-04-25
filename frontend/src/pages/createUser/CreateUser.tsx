@@ -86,7 +86,7 @@ const CreateUser: React.FC = () => {
         <Button>Create User</Button>
         <br />
         <Link to="/login" style={{ color: 'white', textDecoration: 'underline' }}>Login</Link>
-        <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
+        <Link to="/homePage" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
       </form>
     </div>
   );

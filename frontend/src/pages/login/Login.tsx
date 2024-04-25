@@ -43,7 +43,7 @@ const Login: React.FC = () => {
       <br />
       <Link to="/createUser" style={{ color: 'white', textDecoration: 'underline' }}>Create User</Link>
       <br />
-      <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
+      <Link to="/homePage" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
     </div>
   );
 };
