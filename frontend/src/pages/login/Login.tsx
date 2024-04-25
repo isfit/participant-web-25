@@ -21,22 +21,27 @@ const Login: React.FC = () => {
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Username:
+          Username: 
+          <br />
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            style={{ backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px' }}
           />
         </label>
         <br />
         <label>
           Password:
+          <br />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            style={{ backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px'}}
           />
         </label>
+        <br />
         <br />
         <Button type="submit">Login</Button>
       </form>

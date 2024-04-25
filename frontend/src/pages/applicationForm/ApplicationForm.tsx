@@ -41,7 +41,7 @@ const ApplicationForm: React.FC = () => {
               onChange={handleChange}
               required
               rows={20}
-              style={{ width: '100%', backgroundColor: 'white', borderRadius: '10px', color: 'black', padding: '10px' }} 
+              style={{ width: '100%', backgroundColor: 'white', borderRadius: '5px', color: 'black', padding: '5px' }} 
             />
         </div>
         <Button type="submit">Submit</Button>
