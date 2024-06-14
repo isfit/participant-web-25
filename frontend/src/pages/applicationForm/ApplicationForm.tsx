@@ -23,13 +23,13 @@ const handleSelect = (message: string) => {
 
 const sectionMenuItems: MenuItemProps[] = [
   { type: 'label', content: '' },
-  { type: 'item', content: 'Organization Resources', onSelect: () => handleSelect('OR') },
+  { type: 'item', content: 'Organizational Resources', onSelect: () => handleSelect('OR') },
   { type: 'item', content: 'Event Management', onSelect: () => handleSelect('EM') },
   { type: 'item', content: 'Public Relations', onSelect: () => handleSelect('PR') },
 ];
 
 const positions: { [key: string]: MenuItemProps[] } = {
-  'Organization Resources': [
+  'Organizational Resources': [
     { type: 'item', content: 'IT', onSelect: () => handleSelect('it') },
     { type: 'item', content: 'HR', onSelect: () => handleSelect('hr') },
     { type: 'item', content: 'Finances', onSelect: () => handleSelect('finances') },
@@ -46,7 +46,7 @@ const positions: { [key: string]: MenuItemProps[] } = {
 
 const ApplicationForm: React.FC = () => {
   const [formValues, setFormValues] = useState<FormValues>({ coverLetter: '' });
-  const [selectedSection, setSelectedSection] = useState<string>('Organization Resources');
+  const [selectedSection, setSelectedSection] = useState<string>('Organizational Resources');
   const [selectedPosition, setSelectedPosition] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
