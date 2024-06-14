@@ -4,17 +4,43 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 //import css
 import './ApplicationForm.css';
-
-//TODO 
-//TODO Few things can be improved:
-
-//TODO Add proper styling to textarea element
-//TODO Add proper styling to "Home" navigation button
-//TODO Add navigation menu to Application Form page. Top right corner needs navigation to "Login", "Create User" and "Profile"
+import Dropdown from '../../components/Menus/Dropdown.tsx';
 
 interface FormValues {
   coverLetter: string;
 }
+
+interface MenuItemProps {
+  type: MenuItemType;
+  content?: string;
+  onSelect?: () => void;
+}
+
+type MenuItemType = 'label' | 'item' | 'separator';
+
+const handleSelect = (message: string) => {
+  alert(message);
+};
+
+const sectionMenuItems: MenuItemProps[] = [
+  { type: 'label', content: '' },
+  { type: 'item', content: 'Section 1', onSelect: () => handleSelect('Section 1') },
+  { type: 'item', content: 'Section 2', onSelect: () => handleSelect('Section 2') },
+  { type: 'separator' },
+  { type: 'item', content: 'Section 3', onSelect: () => handleSelect('Section 3') },
+  { type: 'item', content: 'Section 4', onSelect: () => handleSelect('Section 4') },
+  { type: 'item', content: 'Section 5', onSelect: () => handleSelect('Section 5') },
+];
+
+const positionMenuItems: MenuItemProps[] = [
+  { type: 'label', content: '' },
+  { type: 'item', content: 'Position 1', onSelect: () => handleSelect('Position 1') },
+  { type: 'item', content: 'Position 2', onSelect: () => handleSelect('Position 2') },
+  { type: 'separator' },
+  { type: 'item', content: 'Position 3', onSelect: () => handleSelect('Position 3') },
+  { type: 'item', content: 'Position 4', onSelect: () => handleSelect('Position 4') },
+  { type: 'item', content: 'Position 5', onSelect: () => handleSelect('Position 5') },
+];
 
 const ApplicationForm: React.FC = () => {
   const [formValues, setFormValues] = useState<FormValues>({
@@ -36,13 +62,39 @@ const ApplicationForm: React.FC = () => {
   };
 
   return (
+
     <div id='pageContainer'> 
+      <div className="topRight">
+        <Button><Link to="/login" style={{ color: 'white'}}>Login</Link></Button>
+        <Button><Link to="/createUser" style={{ color: 'white'}}>Create user</Link></Button>
+        <Button><Link to="/profilePage" style={{ color: 'white'}}>My profile</Link></Button>
+      </div>
       <Header linkTo='/homepage'/>
-      <h2>Application Form For Participants</h2>
-      <p>Tell us about yourself and your motivation for joining Isfit</p>
+      <div>
+      <div className='applicationInfo'>
+        <h2>Application Form For Participants</h2>
+        <p>Choose the applicable sections and positions</p>
+        <p>Tell us about yourself and your motivation for joining ISFiT</p>
+      </div>
       <form className="applicationForm" onSubmit={handleSubmit}>
         <div id='applicationContainer'>
-            <label id='applicationTitle' htmlFor="coverLetter">Cover letter</label><br />
+
+          {/* Drop down for sections and positions */}
+          {/* Sections */}
+          <div className='dropdownContainer'>
+            <label htmlFor="section">Choose a section</label>
+            <Dropdown triggerText='Sections' menuItems={sectionMenuItems}/>
+          </div>
+            {/* Positions */}
+            <div className='dropdownContainer'>
+              <label htmlFor="position">Choose a position</label>
+              <Dropdown triggerText='Positions' menuItems={positionMenuItems}/>
+            </div>
+
+            {/* Cover letter  */}
+            <div className='dropdownContainer'>
+              <label id='applicationTitle' htmlFor="coverLetter">Cover letter</label><br />
+            </div>
             <div className='textareaContainer'>
               <textarea
                 id="coverLetter"
@@ -50,13 +102,13 @@ const ApplicationForm: React.FC = () => {
                 value={formValues.coverLetter}
                 onChange={handleChange}
                 required
-                placeholder='Tell us about yourself and why you want to join isfit'
+                placeholder='Give us a brief introduction about yourself and your motivation for joining ISFiT.'
               />
             </div>
         </div>
         <Button type="submit">Submit</Button>
       </form>
-        <Link to="/homePage" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
+      </div>
     </div>
   );
 };
