@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
-//import css
 import './ApplicationForm.css';
 import Dropdown from '../../components/Menus/Dropdown.tsx';
 
@@ -19,33 +18,36 @@ interface MenuItemProps {
 type MenuItemType = 'label' | 'item' | 'separator';
 
 const handleSelect = (message: string) => {
-  alert(message);
+  console.log('Selected:', message);
 };
 
 const sectionMenuItems: MenuItemProps[] = [
   { type: 'label', content: '' },
-  { type: 'item', content: 'Section 1', onSelect: () => handleSelect('Section 1') },
-  { type: 'item', content: 'Section 2', onSelect: () => handleSelect('Section 2') },
-  { type: 'separator' },
-  { type: 'item', content: 'Section 3', onSelect: () => handleSelect('Section 3') },
-  { type: 'item', content: 'Section 4', onSelect: () => handleSelect('Section 4') },
-  { type: 'item', content: 'Section 5', onSelect: () => handleSelect('Section 5') },
+  { type: 'item', content: 'Organization Resources', onSelect: () => handleSelect('OR') },
+  { type: 'item', content: 'Event Management', onSelect: () => handleSelect('EM') },
+  { type: 'item', content: 'Public Relations', onSelect: () => handleSelect('PR') },
 ];
 
-const positionMenuItems: MenuItemProps[] = [
-  { type: 'label', content: '' },
-  { type: 'item', content: 'Position 1', onSelect: () => handleSelect('Position 1') },
-  { type: 'item', content: 'Position 2', onSelect: () => handleSelect('Position 2') },
-  { type: 'separator' },
-  { type: 'item', content: 'Position 3', onSelect: () => handleSelect('Position 3') },
-  { type: 'item', content: 'Position 4', onSelect: () => handleSelect('Position 4') },
-  { type: 'item', content: 'Position 5', onSelect: () => handleSelect('Position 5') },
-];
+const positions: { [key: string]: MenuItemProps[] } = {
+  'Organization Resources': [
+    { type: 'item', content: 'IT', onSelect: () => handleSelect('it') },
+    { type: 'item', content: 'HR', onSelect: () => handleSelect('hr') },
+    { type: 'item', content: 'Finances', onSelect: () => handleSelect('finances') },
+  ],
+  'Event Management': [
+    { type: 'item', content: 'Logistics', onSelect: () => handleSelect('logistics') },
+    { type: 'item', content: 'Program Coordination', onSelect: () => handleSelect('program-coordination') },
+  ],
+  'Public Relations': [
+    { type: 'item', content: 'Marketing', onSelect: () => handleSelect('marketing') },
+    { type: 'item', content: 'Media Relations', onSelect: () => handleSelect('media-relations') },
+  ],
+};
 
 const ApplicationForm: React.FC = () => {
-  const [formValues, setFormValues] = useState<FormValues>({
-    coverLetter: ''
-  });
+  const [formValues, setFormValues] = useState<FormValues>({ coverLetter: '' });
+  const [selectedSection, setSelectedSection] = useState<string>('Organization Resources');
+  const [selectedPosition, setSelectedPosition] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -58,42 +60,52 @@ const ApplicationForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Form submitted:', formValues);
-    // You can perform form submission logic here
   };
 
+  // Reset position when section is changed
+  useEffect(() => {
+    setSelectedPosition('');
+    console.log('Selected section:', positions[selectedSection])
+  }, [selectedSection]);
+
   return (
-
-    <div id='pageContainer'> 
+    <div id='pageContainer'>
       <div className="topRight">
-        <Button><Link to="/login" style={{ color: 'white'}}>Login</Link></Button>
-        <Button><Link to="/createUser" style={{ color: 'white'}}>Create user</Link></Button>
-        <Button><Link to="/profilePage" style={{ color: 'white'}}>My profile</Link></Button>
+        <Button><Link to="/login" style={{ color: 'white' }}>Login</Link></Button>
+        <Button><Link to="/createUser" style={{ color: 'white' }}>Create user</Link></Button>
+        <Button><Link to="/profilePage" style={{ color: 'white' }}>My profile</Link></Button>
       </div>
-      <Header linkTo='/homepage'/>
+      <Header linkTo='/homepage' />
       <div>
-      <div className='applicationInfo'>
-        <h2>Application Form For Participants</h2>
-        <p>Choose the applicable sections and positions</p>
-        <p>Tell us about yourself and your motivation for joining ISFiT</p>
-      </div>
-      <form className="applicationForm" onSubmit={handleSubmit}>
-        <div id='applicationContainer'>
-
-          {/* Drop down for sections and positions */}
-          {/* Sections */}
-          <div className='dropdownContainer'>
-            <label htmlFor="section">Choose a section</label>
-            <Dropdown triggerText='Sections' menuItems={sectionMenuItems}/>
-          </div>
-            {/* Positions */}
+        <div className='applicationInfo'>
+          <h2>Application Form For Participants</h2>
+          <p>Choose the applicable sections and positions</p>
+          <p>Tell us about yourself and your motivation for joining ISFiT</p>
+        </div>
+        <form className="applicationForm" onSubmit={handleSubmit}>
+          <div id='applicationContainer'>
+            {/* Sections dropdown */}
             <div className='dropdownContainer'>
-              <label htmlFor="position">Choose a position</label>
-              <Dropdown triggerText='Positions' menuItems={positionMenuItems}/>
+              <label className='dropdownLabel' htmlFor="section">Choose a section</label>
+              <Dropdown triggerText={selectedSection ? selectedSection : 'Sections'} menuItems={sectionMenuItems} onItemSelected={setSelectedSection} />
             </div>
+            {/* Positions dropdown */}
+            {selectedSection && (
+              <div className='dropdownContainer'>
+                <label className='dropdownLabel' htmlFor="position">Choose a position</label>
+                <Dropdown
+                  triggerText={selectedPosition ? selectedPosition : 'Positions'}
+                  menuItems={positions[selectedSection] || []} // Ensure positions[selectedSection] is defined
+                  onItemSelected={setSelectedPosition}
+                />
+              </div>
+            )}
 
-            {/* Cover letter  */}
+            {/* Cover letter */}
             <div className='dropdownContainer'>
-              <label id='applicationTitle' htmlFor="coverLetter">Cover letter</label><br />
+              <div className='coverLetterInfo'>
+                {selectedSection && selectedPosition && <p>{selectedSection}: {selectedPosition}</p>}
+              </div>
             </div>
             <div className='textareaContainer'>
               <textarea
@@ -105,9 +117,9 @@ const ApplicationForm: React.FC = () => {
                 placeholder='Give us a brief introduction about yourself and your motivation for joining ISFiT.'
               />
             </div>
-        </div>
-        <Button type="submit">Submit</Button>
-      </form>
+          </div>
+          <Button type="submit">Apply</Button>
+        </form>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ interface DropdownProps {
 }
 
 
-const Dropdown: React.FC<DropdownProps> = ({ triggerText, menuItems }) => {
+const Dropdown: React.FC<DropdownProps> = ({ triggerText, menuItems, onItemSelected }) => {
 
   return (
     <DropdownMenu>
@@ -35,9 +35,19 @@ const Dropdown: React.FC<DropdownProps> = ({ triggerText, menuItems }) => {
 
       <DropdownMenuContent className="dropdownContent">
         {menuItems.map((item, index) => (
-          <React.Fragment key={index}>
+            <React.Fragment key={index}>
             {item.type === 'label' && <DropdownMenuLabel>{item.content}</DropdownMenuLabel>}
-            {item.type === 'item' && <DropdownMenuItem className="dropdownItem" onSelect={item.onSelect}>{item.content}</DropdownMenuItem>}
+            {item.type === 'item' && (
+              <DropdownMenuItem
+                className="dropdownItem"
+                onSelect={() => {
+                  if (item.onSelect) item.onSelect();
+                  onItemSelected(item.content || ''); // Notify parent of selection
+                }}
+              >
+                {item.content}
+              </DropdownMenuItem>
+            )}
             {item.type === 'separator' && <DropdownMenuSeparator />}
           </React.Fragment>
         ))}

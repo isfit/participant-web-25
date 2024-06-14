@@ -11,8 +11,7 @@
 }
 
 .dropdownContent {
-    border-radius: 0 0 8px 8px; /* Default rounded corners for the bottom */
-    overflow: hidden; /* Ensure the rounded corners are visible */
+    border-radius: 8px 8px 8px 8px;
+    overflow: hidden; 
     z-index: 999;
-
 }
