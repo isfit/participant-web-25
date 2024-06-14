@@ -104,7 +104,11 @@ const ApplicationForm: React.FC = () => {
             {/* Cover letter */}
             <div className='dropdownContainer'>
               <div className='coverLetterInfo'>
-                {selectedSection && selectedPosition && <p>{selectedSection}: {selectedPosition}</p>}
+                {selectedSection && selectedPosition && (
+                <div className='applicationInfo' id="selectionInfo">
+                  <p>{selectedSection}: {selectedPosition}</p>
+                </div>
+                )}
               </div>
             </div>
             <div className='textareaContainer'>

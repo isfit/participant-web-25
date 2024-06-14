@@ -120,7 +120,11 @@ label {
 
 .coverLetterInfo {
     /* reserve space for the section and position text */
-    min-height: 5em;
+    min-height: 7em;
     padding: 0;
     margin: 0;
+}
+
+#selectionInfo {
+    padding: 10px;
 }
