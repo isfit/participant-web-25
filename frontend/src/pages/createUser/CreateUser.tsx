@@ -41,7 +41,7 @@ const CreateUser: React.FC = () => {
   return (
     <div style={{ margin: '30px 30px' }}>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
-        <Header linkTo='/home'/>
+        <Header linkTo='/homepage'/>
         <h1>Create User</h1>
         <label>
           First Name:
@@ -86,8 +86,8 @@ const CreateUser: React.FC = () => {
         <br />
         <Button>Create User</Button>
         <br />
-        <Link to="/login" style={{ color: 'white', textDecoration: 'underline' }}>Login</Link>
-        <Link to="/homePage" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
+        <p>Already have an account?</p>
+        <Button><Link to="/login" style={{ color: 'white'}}>Login</Link></Button>
       </form>
     </div>
   );

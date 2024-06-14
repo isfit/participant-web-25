@@ -11,7 +11,6 @@ const AboutPage: React.FC = () => {
     <div style={{margin: '30px 30px'}}>
       <div className="topRight">
         <Button><Link to="/login" style={{ color: 'white'}}>Login</Link></Button>
-        <Button><Link to="/createUser" style={{ color: 'white'}}>Create user</Link></Button>
         <Button><Link to="/profilePage" style={{ color: 'white'}}>My profile</Link></Button>
       </div>
      

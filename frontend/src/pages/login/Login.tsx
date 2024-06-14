@@ -17,7 +17,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-page" style={{margin: '30px 30px'}}>
-      <Header linkTo='/home'/>
+      <Header linkTo='/homepage'/>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -46,9 +46,8 @@ const Login: React.FC = () => {
         <Button type="submit">Login</Button>
       </form>
       <br />
-      <Link to="/createUser" style={{ color: 'white', textDecoration: 'underline' }}>Create User</Link>
-      <br />
-      <Link to="/homePage" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
+      <p>Don't have an account?</p>
+      <Button><Link to="/createUser" style={{ color: 'white'}}>Create user</Link></Button>
     </div>
   );
 };
