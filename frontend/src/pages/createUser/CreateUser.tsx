@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, TextField } from '@radix-ui/themes';
+import { Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
+import './CreateUser.css';
 
 interface User {
   firstName: string;
@@ -39,55 +40,36 @@ const CreateUser: React.FC = () => {
   };
 
   return (
-    <div style={{ margin: '30px 30px' }}>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
-        <Header linkTo='/homepage'/>
-        <h1>Create User</h1>
-        <label>
-          First Name:
-          <br />
-          <input type="text" name="firstName" value={user.firstName} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px' }}/>
-          </label>
-        <label>
-          Last Name:
-          <br />
-          <input type="text" name="lastName" value={user.lastName} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px' }}/>
-        </label>
-        <label>
-          Email:
-          <br />
-          <input type="email" name="email" value={user.email} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px' }}/>
-        </label>
-        <label>
-          Phone Number:
-          <br />
-          <input type="tel" name="phone" value={user.phone} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px' }}/>
-        </label>
-        <label>
-          Country of Residence:
-          <br />
-          <input type="text" name="country" value={user.country} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px' }}/>
-        </label>
-        <label>
-          Date of Birth:
-          <br />
-          <input type="date" name="dob" value={user.dob} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px' }}/>
-        </label>
-        <label>
-          Password:
-          <br />
-          <input type="password" name="password" value={user.password} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px' }}/>
-        </label>
-        <label>
-          Confirm Password:
-          <br />
-          <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} style={{backgroundColor: 'white', color: 'black', borderRadius: '5px', padding: '5px' }}/>
-        </label>
-        <br />
-        <Button>Create User</Button>
-        <br />
-        <p>Already have an account?</p>
-        <Button><Link to="/login" style={{ color: 'white'}}>Login</Link></Button>
+    <div className='outerContainer'>
+        <Header linkTo='/homepage' />
+      <form onSubmit={handleSubmit} className='formContainer'>
+          {[
+            { label: 'First name', name: 'firstName', type: 'text', placeholder: 'John' },
+            { label: 'Last name', name: 'lastName', type: 'text', placeholder: 'Doe' },
+            { label: 'Email', name: 'email', type: 'email', placeholder: 'name@email.com' },
+            { label: 'Phone Number', name: 'phone', type: 'tel', placeholder: '+49 012 345 6789' },
+            { label: 'Country of Residence', name: 'country', type: 'text', placeholder: 'Germany' },
+            { label: 'Date of Birth', name: 'dob', type: 'date', placeholder: '' },
+            { label: 'Password', name: 'password', type: 'password', placeholder: '**********' },
+            { label: 'Confirm Password', name: 'confirmPassword', type: 'password', placeholder: '**********' },
+          ].map(({ label, name, type, placeholder }) => (
+            <label key={name} className='formSection'>
+              <p>{label}</p>
+              <input
+                type={type}
+                name={name}
+                value={user[name as keyof User]}
+                onChange={handleChange}
+                placeholder={placeholder}
+                className='formInput'
+              />
+            </label>
+          ))}
+        <Button className='submitButton'>Create User</Button>
+        <p className='loginPrompt'>Already have an account?</p>
+        <Button className='loginButton'>
+          <Link to="/login" className='loginLink'>Login</Link>
+        </Button>
       </form>
     </div>
   );

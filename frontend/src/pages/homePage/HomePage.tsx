@@ -3,8 +3,6 @@ import React from 'react';
 import { Heading, Text, Box, Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
-import Header from '../../components/Header/Header.tsx';
-
 
 const AboutPage: React.FC = () => {
   return (

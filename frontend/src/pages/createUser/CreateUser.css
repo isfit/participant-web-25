@@ -1,0 +1,80 @@
+:root {
+    --primary-bg: rgba(74, 56, 56, 0.31);
+    --primary-color: #4a3838;
+    --secondary-color: white;
+    --input-bg: white;
+    --input-text: black;
+    --border-radius: 5px;
+    --padding: 10px;
+    --margin: 5px;
+}
+
+.outerContainer {
+    background-color: var(--primary-bg);
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.formContainer {
+    background-color: var(--secondary-color);
+    padding: 20px 60px 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: var(--margin);
+}
+
+.formSection p {
+    align-self: flex-start;
+}
+
+.formSection p {
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: var(--primary-color);
+}
+
+.formInput {
+    width: 100%;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-color);
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    font-size: 0.8em;
+}
+
+.submitButton {
+    margin-top: var(--margin);
+    width: 100%;
+}
+
+.loginPrompt {
+    margin-top: var(--margin);
+    color: var(--primary-color);
+}
+
+.loginButton {
+    margin-top: var(--margin);
+}
+
+.loginLink {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
