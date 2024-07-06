@@ -1,19 +1,22 @@
 import React from 'react';
-
 import { Heading, Text, Box, Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 
+
 const AboutPage: React.FC = () => {
   return (
-    <div style={{margin: '30px 30px'}}>
+    <div className="loginNavbar">
       <div className="topRight">
-        <Button><Link to="/login" style={{ color: 'white'}}>Login</Link></Button>
-        <Button><Link to="/profilePage" style={{ color: 'white'}}>My profile</Link></Button>
+        <Link to="/login" style={{ color: 'white'}}><Button>Login</Button></Link>
+        <Link to="/profilePage" style={{ color: 'white'}}><Button>My profile</Button></Link>
       </div>
      
+      <div className="center-container">
+      <img src={'/isfit_log.png'} alt="Logo" className="logo" />
+    </div>
       <br />
-      <Button><Link to="/applicationForm" style={{ color: 'white'}}>Apply now!</Link></Button>
+      <Link to="/applicationForm" className="applyButtonLink"><Button className="applyButton">Apply now!</Button></Link>
       <Box>
         <Heading as="h1" size={"1"}>
           About ISFIT

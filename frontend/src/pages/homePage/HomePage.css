@@ -8,11 +8,37 @@ body{
   }
 
 
-  .topRight{
-    position: absolute; 
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+.topRight{
+  position: absolute; 
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.loginNavbar{
+  margin: 30px;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  width: 300px;
+  align-items: center;
+}
+
+.applyButton{
+  width: 150px;
+  height: 60px;
+}
+
+.applyButtonLink{
+  color: white;
+  font-size: 18px;
+}

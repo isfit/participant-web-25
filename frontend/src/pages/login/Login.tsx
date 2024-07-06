@@ -47,7 +47,7 @@ const Login: React.FC = () => {
       </form>
       <br />
       <p>Don't have an account?</p>
-      <Button><Link to="/createUser" style={{ color: 'white'}}>Create user</Link></Button>
+      <Link to="/createUser" style={{ color: 'white'}}><Button>Create user</Button></Link>
     </div>
   );
 };

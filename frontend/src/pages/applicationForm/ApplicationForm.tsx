@@ -71,8 +71,8 @@ const ApplicationForm: React.FC = () => {
   return (
     <div id='pageContainer'>
       <div className="topRight">
-        <Button><Link to="/login" style={{ color: 'white' }}>Login</Link></Button>
-        <Button><Link to="/profilePage" style={{ color: 'white' }}>My profile</Link></Button>
+        <Link to="/login" style={{ color: 'white'}}><Button>Login</Button></Link>
+        <Link to="/profilePage" style={{ color: 'white'}}><Button>My profile</Button></Link>
       </div>
       <Header linkTo='/homepage' />
       <div>
