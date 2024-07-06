@@ -67,9 +67,9 @@ const CreateUser: React.FC = () => {
           ))}
         <Button className='submitButton'>Create User</Button>
         <p className='loginPrompt'>Already have an account?</p>
-        <Button className='loginButton'>
-          <Link to="/login" className='loginLink'>Login</Link>
-        </Button>
+        
+          <Link to="/login" className='loginLink'><Button className='loginButton'>Login</Button></Link>
+        
       </form>
     </div>
   );
