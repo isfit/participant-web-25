@@ -3,7 +3,7 @@ import { jwtDecode } from 'jwt-decode';
 import { AuthTokens } from '../types/types';
 
 const axiosInstance = axios.create({
-    baseURL: '/api',
+    baseURL: '/',
 });
 
 axiosInstance.interceptors.request.use(
