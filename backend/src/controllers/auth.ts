@@ -11,7 +11,6 @@ const register = async (req: Request, res: Response, next: NextFunction) => {
     try {
 
         const birthDate = Date.parse(dateBirth);
-        console.log(dateBirth)
         const user = new User({
             firstName,
             lastName,

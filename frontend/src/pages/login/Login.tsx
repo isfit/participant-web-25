@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@radix-ui/themes';
+import { useAuth } from '../../context/AuthenticationContext';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -12,6 +15,8 @@ const Login: React.FC = () => {
     console.log(
       `Logging in with username: ${username} and password: ${password}`,
     );
+    login(username, password);
+    navigate('/home');
   };
 
   return (
