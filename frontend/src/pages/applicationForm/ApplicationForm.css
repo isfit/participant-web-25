@@ -1,0 +1,133 @@
+
+
+#pageContainer {
+    padding: 40px 40px 40px 40px;
+}
+
+.applicationInfo {
+    background-color: rgba(37, 37, 37, 0.431);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.15);
+}
+
+.textareaContainer {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.928);
+    margin-bottom: 16px;
+    box-shadow: 0 0 10px 0 rgba(68, 68, 68, 0.388);
+
+
+    &:hover {
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.388);
+    }
+}
+
+
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* style the text area */
+textarea {
+    position: relative;
+    resize: none;
+    width: 100%;
+    min-height: 40vh;
+    padding: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(50, 50, 50);
+    font-size: 1.2em;;
+    line-height: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+textarea:focus {
+    cursor: text;
+}
+
+textarea::placeholder {
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    opacity: 0.3;
+}
+
+textarea::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 20px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #602c2c9b;
+    border-radius: 5px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0);
+}
+
+div #applicationContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-size: 1.3em;
+    color: white;
+}
+
+.dropdownLabel {
+    margin-bottom: 10px;
+}
+
+.dropdownContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dropdownContainer:nth-last-child(2) {
+    border: none; 
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.applicationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.coverLetterInfo {
+    /* reserve space for the section and position text */
+    min-height: 7em;
+    padding: 0;
+    margin: 0;
+}
+
+#selectionInfo {
+    padding: 10px;
+    /* add a transition */
+    transition: all 2s;
+}

@@ -1,0 +1,17 @@
+.dropdownItem {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(47, 0, 0, 0.9);
+    transition: background-color 0.3s;
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(136, 70, 70, 1);
+    }
+}
+
+.dropdownContent {
+    border-radius: 8px 8px 8px 8px;
+    overflow: hidden; 
+    z-index: 999;
+}

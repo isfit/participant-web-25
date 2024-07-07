@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button } from '@radix-ui/themes';
 import { Link, useNavigate } from 'react-router-dom';
 import { register } from '../../api/user';
+import Header from '../../components/Header/Header';
+import './CreateUser.css';
 
 interface User {
   firstName: string;
@@ -40,60 +42,95 @@ const CreateUser: React.FC = () => {
       alert('Passwords do not match');
       return;
     } else {
-      console.log(user)
-      register(user.firstName, user.lastName, user.email, user.phone, user.country, user.dob, user.password);
-      navigate('/login')
+      console.log(user);
+      register(
+        user.firstName,
+        user.lastName,
+        user.email,
+        user.phone,
+        user.country,
+        user.dob,
+        user.password,
+      );
+      navigate('/login');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
-      <h1>Create User</h1>
-      <label>
-        First Name:
+    <div className="outerContainer">
+      <Header linkTo="/homepage" />
+      <form onSubmit={handleSubmit} className="formContainer">
+        {[
+          {
+            label: 'First name',
+            name: 'firstName',
+            type: 'text',
+            placeholder: 'John',
+          },
+          {
+            label: 'Last name',
+            name: 'lastName',
+            type: 'text',
+            placeholder: 'Doe',
+          },
+          {
+            label: 'Email',
+            name: 'email',
+            type: 'email',
+            placeholder: 'name@email.com',
+          },
+          {
+            label: 'Phone Number',
+            name: 'phone',
+            type: 'tel',
+            placeholder: '+49 012 345 6789',
+          },
+          {
+            label: 'Country of Residence',
+            name: 'country',
+            type: 'text',
+            placeholder: 'Germany',
+          },
+          {
+            label: 'Date of Birth',
+            name: 'dob',
+            type: 'date',
+            placeholder: '',
+          },
+          {
+            label: 'Password',
+            name: 'password',
+            type: 'password',
+            placeholder: '**********',
+          },
+          {
+            label: 'Confirm Password',
+            name: 'confirmPassword',
+            type: 'password',
+            placeholder: '**********',
+          },
+        ].map(({ label, name, type, placeholder }) => (
+          <label key={name} className="formSection">
+            <p>{label}</p>
+            <input
+              type={type}
+              name={name}
+              value={user[name as keyof User]}
+              onChange={handleChange}
+              placeholder={placeholder}
+              className="formInput"
+            />
+          </label>
+        ))}
+        <Button className="submitButton">Create User</Button>
         <br />
-        <input type="text" name="firstName" value={user.firstName} onChange={handleChange} style={{ backgroundColor: 'white', color: 'black', borderRadius: '20px' }} />
-      </label>
-      <label>
-        Last Name:
-        <br />
-        <input type="text" name="lastName" value={user.lastName} onChange={handleChange} style={{ backgroundColor: 'white', color: 'black', borderRadius: '20px' }} />
-      </label>
-      <label>
-        Email:
-        <br />
-        <input type="email" name="email" value={user.email} onChange={handleChange} style={{ backgroundColor: 'white', color: 'black', borderRadius: '20px' }} />
-      </label>
-      <label>
-        Phone Number:
-        <br />
-        <input type="tel" name="phone" value={user.phone} onChange={handleChange} style={{ backgroundColor: 'white', color: 'black', borderRadius: '20px' }} />
-      </label>
-      <label>
-        Country of Residence:
-        <br />
-        <input type="text" name="country" value={user.country} onChange={handleChange} style={{ backgroundColor: 'white', color: 'black', borderRadius: '20px' }} />
-      </label>
-      <label>
-        Date of Birth:
-        <br />
-        <input type="date" name="dob" value={user.dob} onChange={handleChange} style={{ backgroundColor: 'white', color: 'black', borderRadius: '20px' }} />
-      </label>
-      <label>
-        Password:
-        <br />
-        <input type="password" name="password" value={user.password} onChange={handleChange} style={{ backgroundColor: 'white', color: 'black', borderRadius: '20px' }} />
-      </label>
-      <label>
-        Confirm Password:
-        <br />
-        <input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} style={{ backgroundColor: 'white', color: 'black', borderRadius: '20px' }} />
-      </label>
-      <Button>Create User</Button>
-      <br />
-      <Link to="/login" style={{ color: 'white', textDecoration: 'underline' }}>Login</Link>
-      <Link to="/home" style={{ color: 'white', textDecoration: 'underline' }}>Home</Link>
-    </form>
+        <div className="loginPrompt">Already have an account?</div>
+
+        <Link to="/login" className="loginLink">
+          <Button className="loginButton">Login</Button>
+        </Link>
+      </form>
+    </div>
   );
 };
 
