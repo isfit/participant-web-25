@@ -5,7 +5,7 @@ interface IUser {
     firstName: string;
     lastName: String;
     email: string;
-    telephone: string;
+    phone: string;
     password: string;
     country: string;
     address: string;
@@ -29,6 +29,10 @@ const userSchema = new Schema<IUser>({
         required: true,
         unique: true
     },
+    phone: {
+        type: String,
+        required: false
+    },
     password: {
         type: String,
         required: true
@@ -39,7 +43,7 @@ const userSchema = new Schema<IUser>({
     },
     address: {
         type: String,
-        required: true
+        required: false
     },
     dateBirth: {
         type: Date,
@@ -65,7 +69,7 @@ userSchema.pre('save', async function (next) {
     } catch (error) {
         return next(error as CallbackError);
     }
-    
+
 });
 
 // Compare password given, with the one in the database
