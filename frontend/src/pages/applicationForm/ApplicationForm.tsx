@@ -156,15 +156,25 @@ const ApplicationForm: React.FC = () => {
 
     // Updating text areas with word limit constraints
     if (type === 'textarea') {
-      const wordCount = value.trim().split(/\s+/).length;
-      if (
-        ((name === 'themePowerThoughts' || name === 'otherFundingInfo') &&
-          wordCount <= 100) ||
-        ((name === 'countryPowerIssue' ||
-          name === 'motivation' ||
-          name === 'financialSupportReason') &&
-          wordCount <= 300)
-      ) {
+      const wordCount = value.trim().split(/\s+/).filter(Boolean).length;
+    
+      // Define word limits for specific fields
+      const wordLimits: {
+        themePowerThoughts: number;
+        otherFundingInfo: number;
+        countryPowerIssue: number;
+        motivation: number;
+        financialSupportReason: number;
+      } = {
+        themePowerThoughts: 100,
+        otherFundingInfo: 100,
+        countryPowerIssue: 300,
+        motivation: 300,
+        financialSupportReason: 300,
+      };
+    
+      // Ensure that `name` is one of the valid keys
+      if (name in wordLimits && wordCount <= wordLimits[name as keyof typeof wordLimits]) {
         setFormValues((prevState) => ({
           ...prevState,
           [name]: value,
@@ -176,6 +186,8 @@ const ApplicationForm: React.FC = () => {
         [name]: isCheckbox ? (e.target as HTMLInputElement).checked : value,
       }));
     }
+    
+    
 
     // Separate state update for nationality/continent logic
     if (name === 'nationality') {
