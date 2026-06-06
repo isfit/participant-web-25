@@ -64,7 +64,7 @@ export const personalDetails: FormField[] = [
   },
   {
     label:
-      'By checking this box, I confirm I am a student throughout the academic year 2024-2025',
+      'By checking this box, I confirm I am a student throughout the academic year 2026-2027',
     name: 'isStudent',
     type: 'checkbox',
     required: true,
@@ -89,6 +89,12 @@ export const personalDetails: FormField[] = [
     type: 'text',
     placeholder: 'ex. https://youruniversity.edu',
   },
+    {
+    label: 'Where did you first hear about ISFiT27? (Through friends, social media, ambassadors etc.)',
+    name: 'how',
+    type: 'text',
+    placeholder: 'I heard about ISFiT27 through...',
+  },
   {
     labelElement: (
       <>
@@ -96,7 +102,7 @@ export const personalDetails: FormField[] = [
           <Information />
           <span className="tooltip-text infoStudentCertificate">
             The student certificate must confirm your student status for the
-            academic year 2024-25 and must bear the official stamp/electronic
+            academic year 2026-27 and must bear the official stamp/electronic
             signature of the institute/university. If the certificate is not
             in English, please upload an unofficial English translation of it.
             Please upload as a pdf that is easily readable.
@@ -144,27 +150,27 @@ export const personalDetails: FormField[] = [
   export const themeSection: FormField[] = [
     {
       label:
-        "Every time ISFiT is arranged, we explore a new theme that affects students across the globe. The theme for ISFiT25 is ‘POWER’. When considering the theme of 'POWER' for ISFiT25, what aspects or dimensions of power come to your mind first? (max 100 words)",
-      name: 'themePowerThoughts',
+      "Every time ISFiT is arranged, we explore a new theme that affects students across the globe. The theme for ISFiT27 is 'Changing Winds'. When considering the theme of 'Changing Winds' for ISFiT27, what comes to your mind first? (This could be politica, technological, environmental, social or something else.) (max 100 words) ",
+      name: 'themeCWThoughts',
       type: 'textarea',
-      placeholder: 'When I think of power I think of ...',
+      placeholder: 'When I think of Changing Winds I think of ...',
       required: true,
     },
     {
       label:
-        "Reflecting on your country's context, can you identify a specific power issue? How does this issue manifest, and what are its consequences? (max 300 words)",
-      name: 'countryPowerIssue',
+      "Reflecting on your country or community, can you point to a specific change or turning point of significance? How has it unfolded, and what has it meant for you and/or the people around you? (max 300 words)",      
+      name: 'countryCW',
       type: 'textarea',
       placeholder:
-        "When reflecting on my country's context, an issue regarding power is ...",
+        "When reflecting on my country's context ...",
       required: true,
     },
     {
       label:
-        'What is your motivation for attending ISFiT25? How do you envision contributing to discussions and activities surrounding this theme during the festival? (max 300 words)',
-      name: 'motivation',
+        'How do you see youself contributing to the dialogue and activities surrounding this theme during ISFiT27? Is there a change you wish to make, either on a local or global scale? (max 300 words)',
+      name: 'contribution',
       type: 'textarea',
-      placeholder: 'My motivation for attending ISFiT25 is ...',
+      placeholder: 'My contribution to ISFiT27 is ...',
       required: true,
     },
   ];
@@ -179,7 +185,7 @@ export const personalDetails: FormField[] = [
           partial funding to selected students. However, we encourage you to
           thoughtfully consider your financial need before applying, so that we
           can assist those who need it most. Why do you think that you should be
-          considered for financial support to attend ISFiT25?{' '}
+          considered for financial support to attend ISFiT27?{' '}
           <span className="info-icon">
             <Information />
             <span className="tooltip-text">
@@ -191,7 +197,7 @@ export const personalDetails: FormField[] = [
         </>
       ),
       label:
-        'ISFiT seeks to bring together students from around the globe, and we are committed to making the journey to Trondheim accessible for those who may not otherwise afford it. To support this, we offer full or partial funding to selected students. However, we encourage you to thoughtfully consider your financial need before applying, so that we can assist those who need it most. Why do you think that you should be considered for financial support to attend ISFiT25?',
+        'ISFiT seeks to bring together students from around the globe, and we are committed to making the journey to Trondheim accessible for those who may not otherwise afford it. To support this, we offer full or partial funding to selected students. However, we encourage you to thoughtfully consider your financial need before applying, so that we can assist those who need it most. Why do you think that you should be considered for financial support to attend ISFiT27?',
       name: 'financialSupportReason',
       type: 'textarea',
       placeholder:
@@ -217,7 +223,7 @@ export const personalDetails: FormField[] = [
       placeholder: '',
     },
     {
-      label: 'I can participate in ISFiT25',
+      label: 'I can participate in ISFiT27',
       name: 'canParticipate',
       type: 'select',
       options: [

@@ -13,13 +13,14 @@ interface IApplication extends Document {
     studyField: string;
     university: string;
     universityWebsite?: string;
+    how: string; 
     studentCertificate?: Buffer;
     studentCertificateUrl?: string;
     isEnglishSpeaker: boolean;
     applyingAs: string;
-    themePowerThoughts: string;
-    countryPowerIssue: string;
-    motivation: string;
+    themeCWThoughts: string;
+    countryCW: string;
+    contribution: string;
     financialSupportReason: string;
     fullOrPartialFunding: string;
     dependents: number;
@@ -49,13 +50,14 @@ const ApplicationSchema: Schema = new Schema({
     studyField: { type: String, required: true },
     university: { type: String, required: true },
     universityWebsite: { type: String },
+    how: {type: String, required: true},
     studentCertificate: { type: Buffer, required: true },
     studentCertificateUrl: { type: String },
     isEnglishSpeaker: { type: Boolean, required: true },
     applyingAs: { type: String, required: true },
-    themePowerThoughts: { type: String, required: true },
-    countryPowerIssue: { type: String, required: true },
-    motivation: { type: String, required: true },
+    themeCWThoughts: { type: String, required: true },
+    countryCW: { type: String, required: true },
+    contribution: { type: String, required: true },
     financialSupportReason: { type: String },
     fullOrPartialFunding: { type: String },
     dependents: { type: Number },

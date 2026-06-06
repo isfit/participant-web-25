@@ -3,7 +3,7 @@
 }
 
 .applicationInfo {
-    background-color: #88242c;
+    background-color: #50763F;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -47,7 +47,7 @@
     justify-content: center;   
     align-items: center;          
     color: #fff;
-    background-color: #aa3740;
+    background-color: #50763F;
     border-radius: var(--border-radius);
     cursor: pointer;
     overflow: hidden;
@@ -186,7 +186,7 @@ label {
 }
 
 .applicationFormContainer {
-    --primary-bg: #88242c;
+    --primary-bg: #50763F;
     --primary-color: white;
     --secondary-color: white;
     --input-bg: white;
@@ -197,10 +197,14 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: calc(100% - 80px);
+    max-width: 1000px;
+    margin: 40px auto;
+    box-sizing: border-box;
 }
 
 .outerContainer {
-    background-color: #88242c;
+    background-color: #50763F;
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -208,6 +212,8 @@ label {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .dobContainer {
@@ -234,7 +240,7 @@ label {
 
 .outerContainerSection {
     width: 100%;
-    background-color: #88242c;
+    background-color: #50763F;
     padding-top: 20px;
     padding-bottom: 40px;
     border-radius: 20px;
@@ -243,6 +249,7 @@ label {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 16px;
+    box-sizing: border-box;
 }
 
 .formContainer {
@@ -253,6 +260,8 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .formSection {
@@ -349,7 +358,7 @@ label {
     align-items: center;
     margin-bottom: 20px;
     font-size: 1.2em;
-    background-color: #88242c;
+    background-color: #50763F;
     border-radius: 20px;
     padding-top: 20px;
     padding-bottom: 20px;

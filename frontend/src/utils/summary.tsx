@@ -86,6 +86,14 @@ export function getSummary() {
           </tr>
           <tr>
             <td>
+              <strong>Heard via</strong>
+            </td>
+            <td>
+              <strong>{formValues.how || 'N/A'}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
               <strong>Student Certificate Uploaded:</strong>
             </td>
             <td>{formValues.studentCertificate ? 'Yes' : 'No'}</td>
@@ -109,19 +117,19 @@ export function getSummary() {
           </tr>
           <tr>
             <td>
-              <strong>Thoughts on POWER Theme:</strong>
+              <strong>Thoughts on Changing Winds Theme:</strong>
             </td>
-            <td>{formValues.themePowerThoughts || 'N/A'}</td>
+            <td>{formValues.themeCWThoughts || 'N/A'}</td>
           </tr>
           <tr>
             <td>
-              <strong>Power Issue in Your Country:</strong>
+              <strong>Connection of Changing Winds to Your Country:</strong>
             </td>
-            <td>{formValues.countryPowerIssue || 'N/A'}</td>
+            <td>{formValues.countryCW || 'N/A'}</td>
           </tr>
           <tr>
             <td>
-              <strong>Motivation for Attending ISFiT25:</strong>
+              <strong>Motivation for Attending ISFiT27:</strong>
             </td>
             <td>{formValues.motivation || 'N/A'}</td>
           </tr>

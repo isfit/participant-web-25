@@ -1,7 +1,7 @@
 {
   "name": "participant-web-25",
   "version": "1.0.0",
-  "description": "This is the web application for the new Participant Web for ISFiT25: Power.",
+  "description": "This is the web application for the new Participant Web for ISFiT27: Changing Winds.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

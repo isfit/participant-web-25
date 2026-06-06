@@ -27,6 +27,10 @@ export const getApplications = async () => {
     const response = await axiosInstance.request(config);
     return response;
   } catch (error: any) {
-    return { success: false, message: error.response.data.errors[0].msg };
+    const message =
+    error.response?.data?.errors?.[0]?.msg ?? 'Network error. Please try again later.';
+    return { success: false, message };
+
+
   }
 };

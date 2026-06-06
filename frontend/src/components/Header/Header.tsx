@@ -9,7 +9,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ linkTo = '/' }) => {
   const logo = (
     <img
-      src='/images/Isfitlogo_power_red_version2.png'
+      src='/images/isfit27_logo_long.png'
       alt="Logo"
       className="headerLogo"
     />

@@ -1,5 +1,5 @@
 .login {
-    --primary-bg:#88242c;
+    --primary-bg:#50763F;
     --primary-color: white;
     --secondary-color: white;
     --input-bg: white;
@@ -10,12 +10,12 @@
 }
 
 div{
-    max-width: 800px; 
+    max-width: 100%; 
     margin: 0 auto; 
   }
 
 .outerContainer {
-    background-color: #88242c;
+    background-color: #50763F;
     padding-top: 20px;
     border-radius: 20px;
     width: 100%;

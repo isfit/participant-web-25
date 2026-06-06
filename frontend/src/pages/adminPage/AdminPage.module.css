@@ -1,5 +1,5 @@
 :root {
-  --primary-background-color: #88242c;
+  --primary-background-color: #50763F;
 }
 
 .tableContainer {
@@ -7,7 +7,7 @@
   width: 100%;
   overflow-x: auto;
   border-radius: 10px;
-  background-color: #88242c;
+  background-color: #50763F;
 }
 
 table {
@@ -21,11 +21,11 @@ table {
   }
   
   th {
-    background-color: #88242c;
+    background-color: #50763F;
   }
   
   tbody tr:nth-child(even) {
-    background-color: #98343c;
+    background-color: #50763F;
   }
 
   .topRight {
@@ -108,7 +108,7 @@ table {
   left: -250px; 
   width: 250px;
   height: 100%;
-  background-color: #88242c;
+  background-color: #50763F;
   z-index: 999;
   padding-top: 60px; 
   transition: left 0.3s ease;
@@ -129,7 +129,7 @@ table {
 }
 
 .sideMenu a:hover {
-  background-color: #98343c;
+  background-color: #50763F;
 }
 
 .textareaTable{

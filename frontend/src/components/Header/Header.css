@@ -1,24 +1,27 @@
-.headerLogo{
-    width: 100%;
-    margin-top: -100px;
-    margin-bottom: -100px; 
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
-
-
+.headerLogo {
+  height: 200px;
+  width: auto;
+  display: block;
+  max-width: 90%;
+}
 
 @media (max-width: 768px) {
-    .headerLogo{
-        width: 100%;
-        margin-top: -50px;
-        margin-bottom: -50px; 
-    }
+  .headerLogo {
+    height: 80px;
+  }
 }
 
 @media (max-width: 480px) {
-    .headerLogo{
-        width: 100%;
-        margin-top: 0px;
-        margin-bottom: 0px; 
-    }
+  .headerLogo {
+    height: 60px;
+  }
 }

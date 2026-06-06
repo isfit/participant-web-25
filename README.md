@@ -1,10 +1,9 @@
-# ISFIT25
+# ISFIT27
 
 ## Participant Web
 
-This is the web application for the new Participant Web for ISFiT25: Power.
+This is the web application for the new Participant Web for ISFiT27: Changing Winds.
 
-https://www.figma.com/design/TySjVBpPnAduk2m4MNuLqW/Participant-Web
 
 # Requirements
 1. Node.js

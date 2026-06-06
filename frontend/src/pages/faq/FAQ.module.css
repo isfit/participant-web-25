@@ -46,7 +46,7 @@
   left: -250px; 
   width: 250px;
   height: 100%;
-  background-color: #88242c;
+  background-color: #50763F;
   z-index: 999;
   padding-top: 60px; 
   transition: left 0.3s ease;
@@ -67,7 +67,7 @@
 }
 
 .sideMenu a:hover {
-  background-color: #98343c;
+  background-color: #50763F;
 }
 
 .centerContainer {
@@ -79,7 +79,7 @@
   margin-bottom: 40px;
   padding-top: 40px;
   padding-bottom: 10px;
-  background-color: #88242c;
+  background-color: #50763F;
   border-radius: 20px;
 }
 
@@ -117,14 +117,23 @@
 /* Footer.module.css */
 
 .footer {
-  width: 100vw; 
+  width: 100vw;
   background-color: #111;
   color: white;
   box-sizing: border-box; 
   text-align: center;
   position: relative;
-  left: 0; 
+  left: 0;
   margin-top: 80px;
+  padding: 40px 20px 20px;
+}
+
+.footerLogo {
+  display: block;
+  width: auto;
+  height: 80px;
+  max-width: 80%;
+  margin: 0 auto 20px;
 }
 
 .footerLine1 {
@@ -146,10 +155,11 @@
   justify-content: center;
 }
 
+
 .footerLine2 h2 {
-  font-size: 24px;
+  font-size: 24px; 
   font-weight: bold; 
-  margin: 0; 
+  margin: 0;
   align-items: center;
   justify-content: center;
 }
@@ -178,14 +188,7 @@
   flex-direction: column;
 }
 
-.footerLogo,
-.socialIcon {
-  width: 20px;
-  margin: 0 10px;
-  border-radius: 20px;
-}
-
-.footerLink{
+.footerLink {
   color: white;
   padding: 8px;
   font-weight: 400;
@@ -206,18 +209,14 @@
   text-decoration: underline;
 }
 
-.footerLink:hover{
-  text-decoration: underline;
-}
-
-.footerLogo{
-  width: 50%;
-  margin-bottom: -50px;
-  margin-top: -50px;
+.socialIcon {
+  width: 20px;
+  margin: 0 10px;
+  border-radius: 20px;
 }
 
 .partnersIcon {
-  width: 200px; 
+  width: 200px;
 }
 
 
@@ -231,11 +230,6 @@
     flex-direction: column;
     margin-bottom: 30px;
   }
-  .footerLogo{
-    width: 80%;
-    margin-bottom: -50px;
-    margin-top: -50px;
-  }
 
   .footerLeft, .footerRight {
     flex-direction: row;
@@ -243,17 +237,8 @@
     margin-bottom: 20px;
   }
 
-  .socialIcon {
-    width: 20px;
-  }
-
   .partnersIcon {
     width: 100px;
-  }
-
-  .logo {
-    margin-top: -100px;
-    margin-bottom: -100px;
   }
 }
 
@@ -269,13 +254,8 @@
     margin-bottom: 10px;
   }
 
-  .socialIcon {
-    width: 20px; 
-  }
-
   .footerLine3, .footerLine4, .footerLine5 {
     flex-direction: column;
-    justify-content: center;
     margin-bottom: 20px;
   }
 
@@ -285,10 +265,5 @@
 
   .footerLine6 p {
     font-size: 12px;
-  }
-
-  .logo {
-    margin-top: -50px;
-    margin-bottom: -50px;
   }
 }

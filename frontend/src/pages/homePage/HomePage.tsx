@@ -68,17 +68,17 @@ const HomePage: React.FC = () => {
         {user && <Button onClick={handleLogout}>Logout</Button>}
       </div>
       <div className={styles.centerContainer}>
-        <img src={'images/Isfitlogo_power_white_version2.png'} alt="Logo" className={styles.logo} />
+        <img src={'images/isfit_log.png'} alt="Logo" className={styles.logo} />
         <br />
-       {/* <Link to="/applicationForm">
+        <Link to="/applicationForm">
           <Button className={styles.applyButton}>Apply now!</Button>
-        </Link>*/}
+        </Link>
         <div className={styles.container}>
           <h1 className={styles.homePageHeader}>
-            Welcome to the ISFiT 2025 Participant Web!
+            Welcome to the ISFiT 2027 Participant Web!
           </h1>
-          <p>
-            ISFiT, the world’s largest international student festival, is held
+<p>
+            ISFiT, the world's largest international student festival, is held
             biennially in Trondheim, Norway, during the spring semester. Since
             its inception in 1990, ISFiT has brought together students from
             diverse national and cultural backgrounds, fostering dialogue and
@@ -86,16 +86,18 @@ const HomePage: React.FC = () => {
             issues.
           </p>
           <p>
-            Each festival centers around a unique theme, and for 2025, we will
-            be exploring the theme of POWER. We invite you to join us from March
-            13th to 23rd, 2025, for this exciting event, where students from
-            across the globe will gather in Trondheim to engage, learn, and
-            inspire one another.
+            Each festival centers around a unique theme, and for 2027, we will
+            be exploring the theme of CHANGING WINDS. In a world of mass
+            political upheaval, climate change, and a shifting global order, old
+            truths are no longer certain. We invite you to join us in Trondheim
+            for this exciting event, where students from across the globe will
+            gather to engage, learn, and inspire one another as we discuss the
+            state of our world and this fragile present.
           </p>
-          <p>
+          {/* <p>
             If you are having trouble applying through this website, you can
             alternatively apply through this <a href="https://forms.gle/DFatZ3yqWkdDsuYt6" className={styles.footerEmailLink} target='_blank'>Google Form</a>!
-          </p>
+          </p> */}
         </div>
       </div>
 
@@ -104,7 +106,7 @@ const HomePage: React.FC = () => {
       {/* Footer Section */}
       <footer className={styles.footer}>
       <img
-      src='/images/Isfitlogo_power_white_version2.png'
+      src='/images/isfit_log.png'
       alt="Logo"
       className={styles.footerLogo}
     />
@@ -154,7 +156,7 @@ const HomePage: React.FC = () => {
         
       </div>
       <div className={styles.footerLine6}>
-        <p>© 2025 ISFiT | All Rights Reserved</p>
+        <p>© 2027 ISFiT | All Rights Reserved</p>
       </div>
     </footer>
     </div>

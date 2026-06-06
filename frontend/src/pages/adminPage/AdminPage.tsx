@@ -103,11 +103,12 @@ const AdminPage: React.FC = () => {
         'University',
         'Student Certificate',
         'University Website',
+        'Heard of ISFiT via',
         'Is English Speaker',
         'Applying As',
-        'Theme Power Thoughts',
-        'Country Power Issue',
-        'Motivation',
+        'Theme Changing Winds Thoughts',
+        'Country Changing Winds',
+        'Contribution',
         'Financial Support Reason',
         'Full or partial funding',
         'Dependents',
@@ -143,11 +144,12 @@ const AdminPage: React.FC = () => {
             ? escapeCSV(app.studentCertificateUrl)
             : 'N/A', // Commented out for now
           app.universityWebsite ? escapeCSV(app.universityWebsite) : 'N/A', // Commented out for now
+          app.how ? escapeCSV(app.how) : 'N/A',
           app.isEnglishSpeaker ? 'Yes' : 'No',
           escapeCSV(app.applyingAs),
-          escapeCSV(app.themePowerThoughts),
-          escapeCSV(app.countryPowerIssue),
-          escapeCSV(app.motivation),
+          escapeCSV(app.themeCWThoughts),
+          escapeCSV(app.countryCW),
+          escapeCSV(app.contribution),
           escapeCSV(app.financialSupportReason),
           escapeCSV(app.fullOrPartialFunding),
           app.dependents != null ? escapeCSV(app.dependents.toString()) : 'N/A',
@@ -287,11 +289,12 @@ const AdminPage: React.FC = () => {
                 <th>University</th>
                 <th>Student Certificate</th>
                 <th>University Website</th>
+                <th>Heard via</th>
                 <th>Is English Speaker</th>
                 <th>Applying As</th>
-                <th className={styles.textareaTable}>Theme Power Thoughts</th>
-                <th className={styles.textareaTable}>Country Power Issue</th>
-                <th className={styles.textareaTable}>Motivation</th>
+                <th className={styles.textareaTable}>Theme Changing Winds Thoughts</th>
+                <th className={styles.textareaTable}>Country Changing Winds</th>
+                <th className={styles.textareaTable}>Contribution</th>
                 <th className={styles.textareaTable}>
                   Financial Support Reason
                 </th>
@@ -343,16 +346,17 @@ const AdminPage: React.FC = () => {
                     </td>
                   }{' '}
                   <td>{application.universityWebsite || 'N/A'}</td>
+                  <td>{application.how}</td>
                   <td>{application.isEnglishSpeaker ? 'Yes' : 'No'}</td>
                   <td>{application.applyingAs}</td>
                   <td className={styles.textareaTable}>
-                    {application.themePowerThoughts}
+                    {application.themeCWThoughts}
                   </td>
                   <td className={styles.textareaTable}>
-                    {application.countryPowerIssue}
+                    {application.countryCW}
                   </td>
                   <td className={styles.textareaTable}>
-                    {application.motivation}
+                    {application.contribution}
                   </td>
                   <td className={styles.textareaTable}>
                     {application.financialSupportReason}

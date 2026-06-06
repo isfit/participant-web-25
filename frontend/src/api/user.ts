@@ -28,6 +28,8 @@ export const register = async (
     await axiosInstance.request(config);
     return { success: true };
   } catch (error: any) {
-    return { success: false, message: error.response.data.errors[0].msg };
+    const message =
+    error.response?.data?.errors?.[0]?.msg ?? 'Network error. Please try again later.';
+    return { success: false, message };
   }
 };

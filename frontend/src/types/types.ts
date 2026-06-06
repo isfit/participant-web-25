@@ -37,13 +37,14 @@ export interface IApplicationForm {
   studyField: string;
   university: string;
   universityWebsite?: string;
+  how: string; 
   studentCertificate?: Buffer;
   studentCertificateUrl?: string;
   isEnglishSpeaker: boolean;
   applyingAs: string;
-  themePowerThoughts: string;
-  countryPowerIssue: string;
-  motivation: string;
+  themeCWThoughts: string;
+  countryCW: string;
+  contribution: string;
   financialSupportReason: string;
   fullOrPartialFunding: string;
   dependents: number;
